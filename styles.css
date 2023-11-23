@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+body{
+    display: grid;
+    place-items: center;
+}
+
+#calculator{
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 5px black;
+    padding: 10px;
+    background-color: grey;
+    display: grid;
+    grid-template-areas: 
+    "- credit"
+    "count count"
+    "numbers operator"
+    "numbers operator"
+    "numbers operator";
+    grid-template-columns: 3fr 1fr;
+    gap:5px;
+}
+
+.credit{
+    transition: 0.2s ease-in-out;
+    border-radius: 5px;
+    margin: 2px;
+    text-align: center;
+    grid-area: credit;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    font-family: poppins;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.credit:hover{
+    background-color: black;
+    transition: 1s ease-in-out;
+    color:#40b988
+}
+
+#count{
+    font-weight: bolder;
+    border-radius: 5px;
+    font-size:20px;
+    padding: 10px;
+    text-align: right;
+    font-family: ibm plex mono;
+    background-color: #40b988;
+    color: black;
+    grid-area: count;
+    resize:none
+}
+
+.numbers{
+    grid-area: numbers;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.operator{
+    font-weight: bolder;
+    grid-area: operator;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap:5px
+}
+
+input[type="button"], input[type="reset"]{
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    font-size: 20px;
+    box-shadow: 2px 2px 0 black;
+    font-family: ibm plex mono;
+    padding: 5px;
+    font-weight: bolder;
+    background-color: white;
+    border:none;
+
+}
+
+.operator input{
+    box-shadow: 2px 2px 0 #40b988;
+    background-color: black;
+    color: #40b988;
+}
+
+.operator input:hover{
+    box-shadow: 2px 2px 0 black;
+    color: black;
+    background-color: #40b988;
+}
+
+input[value="="]{
+    background-color:#40b988;
+}
+
+input[value="C"]{
+    background-color: rgb(255, 145, 145);
+}
+
+input:hover{
+    transition: 0.2s ease-in-out;
+    background-color: rgb(173, 173, 162);
+
+}
