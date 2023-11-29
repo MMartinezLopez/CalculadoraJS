@@ -13,25 +13,29 @@
     <div id="calculator">
       <a class="credit" href="https://github.com/MMartinezLopez" title="myGithub">© credit</a>
       <input type="textfield" id="count" disabled value="0"></input>
+      <div class="actions">
+        <input type="button" value="C" id="clear" onclick="clearView()"/>
+        <input type="button" value="/" id="divide" onclick="input('/')"/>
+      </div>
       <div class="numbers">
-        <input type="button" value="7" onclick="input(7)"/>
-        <input type="button" value="8" onclick="input(8)"/>
-        <input type="button" value="9" onclick="input(9)"/>
-        <input type="button" value="4" onclick="input(4)"/>
-        <input type="button" value="5" onclick="input(5)"/>
-        <input type="button" value="6" onclick="input(6)"/>
-        <input type="button" value="1" onclick="input(1)"/>
-        <input type="button" value="2" onclick="input(2)"/>
-        <input type="button" value="3" onclick="input(3)"/>
-        <input type="button" value="0" onclick="input(0)"/>
-        <input type="button" value="C" onclick="clearView()"/>
-        <input type="button" value="=" onclick="calcular()"/>
+        <input type="button" value="7" id="seven" onclick="input(7)"/>
+        <input type="button" value="8" id="eight" onclick="input(8)"/>
+        <input type="button" value="9" id="nine" onclick="input(9)"/>
+        <input type="button" value="4" id="four" onclick="input(4)"/>
+        <input type="button" value="5" id="five" onclick="input(5)"/>
+        <input type="button" value="6" id="six" onclick="input(6)"/>
+        <input type="button" value="1" id="one" onclick="input(1)"/>
+        <input type="button" value="2" id="two" onclick="input(2)"/>
+        <input type="button" value="3" id="three" onclick="input(3)"/>
+        <input type="button" value="0" id="zero" onclick="input(0)"/>
+        <input type="button" value="," id="decimal" onclick="input('.')"/>
+        
       </div>
       <div class="operator">
-        <input type="button" value="/" onclick="input('/')"/>
-        <input type="button" value="x" onclick="input('*')"/>
-        <input type="button" value="-" onclick="input('-')"/>
-        <input type="button" value="+" onclick="input('+')"/>
+        <input type="button" value="x" id="multiply" onclick="input('*')"/>
+        <input type="button" value="-" id="substract" onclick="input('-')"/>
+        <input type="button" value="+" id="add" onclick="input('+')"/>        
+        <input type="button" value="=" id="equals" onclick="calcular()"/>
       </div>
     </div>
   </body>
