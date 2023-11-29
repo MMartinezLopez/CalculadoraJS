@@ -1,3 +1,12 @@
+:root{
+    --accent: #40b988;
+    --bg: black;
+    --action:#ff7878;
+    --gray: #afafaf;
+    --white: white;
+    --ff:Ibm Plex Mono;
+}
+
 *{
     box-sizing: border-box;
     margin:0;
@@ -8,6 +17,7 @@ body{
     place-items: center;
 }
 
+/* Grid template for calculator/buttons */
 #calculator{
     border-radius: 10px;
     box-shadow: 5px 5px 0 5px black;
@@ -17,53 +27,24 @@ body{
     grid-template-areas: 
     "- - - credit"
     "count count count count"
-    "actions actions actions operator"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator"
-    "numbers numbers numbers operator";
-    grid-template-columns: 3fr 1fr;
+    "actions actions actions operators"
+    "numbers numbers numbers operators"
+    "numbers numbers numbers operators"
+    "numbers numbers numbers operators"
+    "numbers numbers numbers operators";
+    grid-template-columns: repeat(4, 1fr);
     gap:5px;
-}
-
-
-#clear{
-    grid-column-start: span 2;
-}
-
-#zero{
-    grid-column-start: span 2;
-}
-
-.credit{
-    transition: 0.2s ease-in-out;
-    border-radius: 5px;
-    margin: 2px;
-    text-align: center;
-    grid-area: credit;
-    color: white;
-    letter-spacing: 1.5px;
-    font-size: 10px;
-    font-family: poppins;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-.credit:hover{
-    background-color: black;
-    transition: 1s ease-in-out;
-    color:#40b988;
 }
 
 #count{
     font-weight: bolder;
     border-radius: 5px;
-    font-size:20px;
+    font-size:25px;
     padding: 10px;
     text-align: right;
-    font-family: ibm plex mono;
-    background-color: #40b988;
-    color: black;
+    font-family: var(--ff);
+    background-color: var(--accent);
+    color: var(--bg);
     grid-area: count;
     resize:none
 }
@@ -80,54 +61,82 @@ body{
     display: grid;
     gap: 5px;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.operator{
-    font-weight: bolder;
-    grid-area: operator;
+.operators{
+    grid-area: operators;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap:5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-input[type="button"], input[type="reset"]{
+#clear{
+    grid-column-start: span 2;
+    background-color: var(--action);
+}
+
+#clear:hover{
+    grid-column-start: span 2;
+    color: var(--action);
+    background-color: var(--gray);
+}
+
+#zero{
+    grid-column-start: span 2;
+}
+
+
+#equals{
+    grid-row-start: span 2;
+}
+
+
+
+.button {
     border-radius: 5px;
     transition: 0.2s ease-in-out;
     font-size: 20px;
-    box-shadow: 2px 2px 0 black;
-    font-family: ibm plex mono;
+    box-shadow: 2px 2px 0 var(--bg);
+    font-family: var(--ff);
     padding: 5px;
     font-weight: bolder;
-    background-color: white;
+    background-color: var(--white);
     border:none;
+}
+
+.button:hover{
+    background-color: var(--accent);
 
 }
 
-.operator input{
-    box-shadow: 2px 2px 0 #40b988;
+.operator{
+    box-shadow: 2px 2px 0 var(--accent);
     background-color: black;
-    color: white;
+    color: var(--white);
 }
 
-.operator input:hover{
-    box-shadow: 2px 2px 0 black;
-    color: black;
-    background-color: #40b988;
+.operator:hover{
+    box-shadow: 2px 2px 0 var(--bg);
+    color: var(--bg);
+    background-color: var(--accent);
 }
 
-input[value="="]{
-    grid-row-start: span 10;
-    background-color:#40b988;
-}
-
-input[value="C"]{
-    background-color: rgb(255, 145, 145);
-}
-
-input:hover{
+.credit{
     transition: 0.2s ease-in-out;
-    background-color: rgb(173, 173, 162);
+    border-radius: 5px;
+    margin: 2px;
+    text-align: center;
+    grid-area: credit;
+    color: var(--white);
+    font-size: 10px;
+    font-family: var(--ff);
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
+.credit:hover{
+    transition: 1s ease-in-out;
+    color:var(--bg);
 }
