@@ -26,7 +26,7 @@ body{
     display: grid;
     grid-template-areas: 
     "- - - credit"
-    "count count count count"
+    "display display display display"
     "actions actions actions operators"
     "numbers numbers numbers operators"
     "numbers numbers numbers operators"
@@ -36,7 +36,7 @@ body{
     gap:5px;
 }
 
-#count{
+#display{
     font-weight: bolder;
     border-radius: 5px;
     font-size:25px;
@@ -45,7 +45,7 @@ body{
     font-family: var(--ff);
     background-color: var(--accent);
     color: var(--bg);
-    grid-area: count;
+    grid-area: display;
     resize:none
 }
 
@@ -130,7 +130,7 @@ body{
     text-align: center;
     grid-area: credit;
     color: var(--white);
-    font-size: 10px;
+    font-size: 12px;
     font-family: var(--ff);
     text-transform: uppercase;
     text-decoration: none;

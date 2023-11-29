@@ -1,23 +1,23 @@
 function input(value) {
-  if (document.getElementById("count").value == "0" || document.getElementById("count").value == "Syntax error") {
-    document.getElementById("count").value = value;
+  if (document.getElementById("display").value == "0" || document.getElementById("display").value == "Syntax error") {
+    document.getElementById("display").value = value;
   } else {
-    document.getElementById("count").value += value;
+    document.getElementById("display").value += value;
   }
 }
 
 function clearView() {
-  document.getElementById("count").value = "0";
+  document.getElementById("display").value = "0";
 }
 
 function calcular() {
     try {
-        let value=eval(document.getElementById("count").value)
+        let value=eval(document.getElementById("display").value)
         if (Number.isInteger(value)){
-            document.getElementById("count").value=value
-        } else{document.getElementById("count").value=value.toFixed(1)}
+            document.getElementById("display").value=value
+        } else{document.getElementById("display").value=value.toFixed(2)}
         
     } catch (error) {
-        document.getElementById("count").value='Syntax error'
+        document.getElementById("display").value='Syntax error'
     }
 }
